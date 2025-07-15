@@ -1,0 +1,199 @@
+// #include<iostream>
+// using namespace std;
+// class shape{
+//     public:
+//     int length;
+//     int base;
+//     float ar;
+//     virtual float area(int a,int b){};
+// };
+// class triangle: public shape {
+//     float area(int length,int base){
+//         ar =  length*base*0.5;
+//         cout<<"The area is "<<ar<<endl;
+//         return ar;
+//     }
+// };
+// class square: public shape{
+//     float area(int len,int le){
+//         ar = len*le;
+//         cout<<"The area is "<<ar<<endl;
+//         return 0;
+//     }
+// };
+// int main(){
+    
+//     triangle t;
+//     shape* sh ;
+//     sh = &t;
+//     sh->area(4,5);
+//     shape* sha;
+//     square s;
+//     sha = &s;
+//     sha->area(4,4);
+// }
+// #include <iostream>  
+// using namespace std;  
+// // Abstract class  
+// class Shape  
+// {  
+//     public:  
+//     virtual float calculateArea() = 0; // pure virtual function.  
+// };  
+// class Square : public Shape  
+// {  
+//     float a;  
+//     public:  
+//     Square(float l)  
+//     {  
+//         a = l;  
+//     }  
+//     float calculateArea()  
+//     {  
+//         return a*a;  
+//     }  
+// };  
+// class Circle : public Shape  
+// {  
+//     float r;  
+//     public:  
+//     Circle(float x)  
+//     {  
+//         r = x;  
+//     }  
+//     float calculateArea()  
+//     {  
+//         return 3.14*r*r ;  
+//     }  
+// };  
+// class Rectangle : public Shape  
+// {  
+//     float l;  
+//     float b;  
+//     public:  
+//     Rectangle(float x, float y)  
+//     {  
+//        l=x;  
+//        b=y;  
+//     }  
+//     float calculateArea()  
+//     {  
+//         return l*b;  
+//     }  
+// };  
+// int main()  
+// {  
+//     Shape *shape;  
+//     Square s(3.4);  
+//     Rectangle r(5,6);  
+//     Circle c(7.8);  
+//     shape =&s;  
+//     int a1 =shape->calculateArea();  
+//     shape = &r;  
+//     int a2 = shape->calculateArea();  
+//     shape = &c;  
+//     int a3 = shape->calculateArea();  
+//     std::cout << "Area of the square is " <<a1<< std::endl;  
+//     std::cout << "Area of the rectangle is " <<a2<< std::endl;  
+//     std::cout << "Area of the circle is " <<a3<< std::endl;  
+//     return 0;
+// }
+// #include<iostream>
+// using namespace std;
+// class shop{
+//     float amt;
+//     int price;
+//     public:
+//     virtual void cal(int price){
+//         float newamt = price;
+//         cout<<"The total amount of this product is: "<<newamt<<endl;
+//     }
+// };
+// class retail: public shop{
+//     void cal(int price){
+//         float newamt = 2*price;
+//         cout<<"The total amount of this product is: "<<newamt<<endl;
+//     }
+// };
+// class wholesale: public shop{
+//     void cal(int price) {
+//         float newamt = 0.5*price;
+//         cout<<"The total amount of this product is: "<<newamt<<endl;
+//     }
+// };
+// int main(){
+//     string wee[5];
+//     for(int i=0;i<5;i++){
+//         if(i%2 == 0){
+//             int p;
+//             cout<<"Give the price of item: ";
+//             cin>>p;
+//             shop* sh = new retail();
+//             sh -> cal(p); 
+//         }
+//         else{
+//             int pr;
+//             cout<<"Give the price of item: ";
+//             cin>>pr;
+//             shop* sh = new wholesale();
+//             sh -> cal(pr); 
+
+//         }
+//     }
+//}
+
+// #include<iostream>
+// using namespace std;
+// class A{
+//     public:
+//         A(int x){
+//             cout<<"The index number is: "<<x<<endl;
+//         }
+// };
+// class B{
+//     public:
+//         B(int x,int y){
+//             cout<<"Sum of the marks is : "<<x+y<<endl;
+//         }
+// };
+// class C:public A,public B{
+//     public:
+//         C(int i,int j,int k): A(i), B(j,k){
+//             cout<<"This are the details of this student. "<<endl;
+//         }
+// }; 
+// int main(){
+//     C car(1,43,45);
+// }
+#include<iostream>
+using namespace std;
+class ps{
+    public:
+    virtual int fun(){
+        cout<<"sum: \n";
+        return 0;
+    }
+};
+class shivi: public ps{
+    public:
+    int fun(int a){
+        ps::fun();
+        cout<<a<<endl;
+        return 0;
+    }
+};
+class kdice : public shivi{
+    public:
+    int fun(int a,int b){
+        shivi::fun(1);
+        cout<<a+b<<endl;
+        return 0;
+    }
+};
+int main(){
+    kdice alice;
+    alice.fun(1,2);
+    return 0;
+}
+
+

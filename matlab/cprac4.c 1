@@ -1,0 +1,149 @@
+// //IpS
+// #include<iostream>
+// using namespace std;
+// class Animal{
+//     public:
+//        string name;
+//        int age;
+//        string sound;
+//        void getdata(){
+//         cin>>name;
+//         cin>>age;
+//         cin>>sound;
+//        }
+//        void display(string name,int age,string sound){
+//         cout<<"Name: "<<name<<endl;
+//         cout<<"Age: "<<age<<endl;
+//         cout<<"Sound: "<<sound<<endl;
+//        }
+// };
+// class dog: public Animal{
+//     public:
+//     void dp(){cout<<name<<" is wagging its tail."<<endl;}  
+// };
+// int main(){
+//     dog ob;
+//     ob.getdata();
+//     ob.display(ob.name,ob.age,ob.sound);
+//     ob.dp();
+// }
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+class event {
+    
+    public:
+        string name;
+        int duration;
+        event(string s,int d){
+            name= s;
+            duration = d;
+        }
+        void displayEventDetails(string name,int duration){
+            cout<<"The event "<<name<<" is occuring for "<<duration<<endl;
+        }
+};
+class workshop: public event{
+    public:
+    string presenter;
+    workshop(string p,string s,int d): event(s,d){
+        presenter=p;
+    }
+    void displayWorkshopdetails(string presenter){
+        cout<<"This workshop is conducted by "<<presenter<<endl;
+    }
+};
+class conference : public event{
+    public:
+    string organizer;
+    conference(string p,string s,int d): event(s,d){
+        organizer = p;
+    }
+    void displayConferenceDetails(string organizer){
+        cout<<"This conference is presented by "<<organizer<<endl;
+    }
+};
+class TechConference: public conference{
+    public:
+    string domain;
+    TechConference(string d,string p, string a, int w): conference(p,a,w){
+        domain = d;
+    }
+    void TechConferenceDetails(string domain){
+        cout<<"The domain of this tech conference is "<<domain<<endl;
+    }
+};
+
+int main(){
+    workshop ob("Atom","Strong",5);
+    ob.displayEventDetails(ob.name,ob.duration);
+    ob.displayWorkshopdetails(ob.presenter);
+    TechConference obb("Programming","Team Atom","Robo",6);
+    obb.displayEventDetails(obb.name,obb.duration);
+    obb.displayConferenceDetails(obb.organizer);
+    obb.TechConferenceDetails(obb.domain);
+    return 0;
+    
+}
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// class grocery{
+//     public:
+//         void displayGroceryinfo(){
+//             cout<<"Displaying grocery information."<<endl;
+//         }
+// };
+// class electronics{
+//     public:
+//         void displayElectronicsInfo(){
+//             cout<<"Displaying electronics information."<<endl; 
+//         }
+// };
+// class food: public grocery{
+//     public:
+//     void displayinfo(){
+//         cout<<"this is a food item "<<endl;
+//     }
+// };
+// class gadgets: public electronics{
+//     public:
+//     void displayinfo(){
+//         cout<<"This is a gadget. "<<endl;
+//     }
+// };
+// class kitchen: public grocery, public electronics{
+//     public:
+//     void print(){
+//         cout<<"This consists of mixers, grinders and fridge."<<endl;
+//     }
+// };
+// int main(){
+//     kitchen k;
+//     k.print();
+//     k.displayGroceryinfo();
+//     food f;
+//     f.displayinfo();
+//     f.displayGroceryinfo();
+//     gadgets g;
+//     g.displayElectronicsInfo();
+//     g.displayinfo();
+// }
+
+// #include<iostream>
+// using namespace std;
+// class bas{
+//     public:
+//     bas(){
+//         cout<<"Kuch bhi"<<endl;
+//     }
+//     bas(int a){
+//         cout<<"Kuch bhi nahi"<<endl;
+//     }
+// }iwt,itt(5);
+// int main(){
+//     return 0;
+// }
